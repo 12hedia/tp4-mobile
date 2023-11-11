@@ -51,12 +51,25 @@ public class WordListAdapter extends RecyclerView.Adapter<WordListAdapter.WordVi
         else return 0;
     }
 
-    class WordViewHolder extends RecyclerView.ViewHolder {
-        private final TextView wordItemView;
+    public void setOnItemClickListener(ClickListener clickListener) {
+        WordListAdapter.clickListener = clickListener;
+    }
+
+    public interface ClickListener {
+        void onItemClick(View v, int position);
+    }
+    class WordViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    private final TextView wordItemView;
 
         private WordViewHolder(View itemView) {
             super(itemView);
             wordItemView = itemView.findViewById(R.id.textView);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            clickListener.onItemClick(view, getAdapterPosition());
         }
     }
     public Word getWordAtPosition (int position) {
