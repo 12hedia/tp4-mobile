@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RoomWordSample</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="hint_word">Word...</string>
+    <string name="button_save">Save</string>
+    <string name="clear_all_data">clear_all_data</string>
+    <string name="empty_not_saved">Word not saved because it is empty.</string>
+    <string name="unable_to_update">Unable to update the word</string>
+</resources>
